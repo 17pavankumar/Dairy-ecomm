@@ -40,7 +40,7 @@
   </head>
   <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-success ">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-success ">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="{% static 'app/images/Neel.png ' %}" width="50" height="50">
@@ -106,6 +106,84 @@
         <a class="nav-link text-white" href="#"> Registration</a>
       </li>
     </ul>
+  </div>
+</nav> -->
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'app/images/Neel.png' %}" width="50" height="50" alt="Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left Links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url "Category" 'ML' %}">Milk</a></li>
+            <li><a class="dropdown-item" href="{% url "Category" 'CR' %}">Curd</a></li>
+            <li><a class="dropdown-item" href="{% url "Category" 'MS' %}">Milkshake</a></li>
+            <li><a class="dropdown-item" href="{% url "Category" 'LS' %}">Lassi</a></li>
+            <li><a class="dropdown-item" href="{% url "Category" 'GH' %}">Ghee</a></li>
+            <li><a class="dropdown-item" href="{% url "Category" 'PN' %}">Paneer</a></li>
+            <li><a class="dropdown-item" href="{% url "Category" 'CZ' %}">Cheese</a></li>
+            <li><a class="dropdown-item" href="{% url "Category" 'IC' %}">Ice-Creams</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Contact Us</a>
+        </li>
+      </ul>
+
+      <!-- Centered Search Form -->
+      <form class="d-flex mx-auto" role="search" style="max-width: 400px; width: 100%;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+      </form>
+
+      <!-- Right Side Menu -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+        <li class="nav-item dropdown mx-2">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Pavan
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Orders</a></li>
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link text-white" href="#">Cart 4</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link text-white" href="#">Wishlist 4</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link text-white" href="#">Login</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link text-white" href="#">Registration</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 

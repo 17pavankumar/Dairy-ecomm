@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 from app.models import Product
-from app.forms import CustomerRegistrationForm
+from app.forms import CustomerRegistrationForm ,CustomerProfileForm
+from django.contrib import messages
 # Create your views here.
 def home(request):
     return render(request,"app/home.html")
@@ -36,3 +37,18 @@ class CustomerRegistrationView(View):
     def get(self,request):
         form = CustomerRegistrationForm()
         return render(request , 'app/customerregistration.html',locals())
+    def get(self,request):
+        form = CustomerRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"User Register Successfully")
+        else:
+            messages.warning(request,"Invalid Input Data")
+        return render(request,'app/customerregistration.html',locals())
+    
+class ProfileView(View):
+    def get(self,request):
+        form = CustomerProfileForm()
+        return render(request , 'app/profile.html',locals())
+    def get(self,request):
+        return render(request , 'app/profile.html',locals())

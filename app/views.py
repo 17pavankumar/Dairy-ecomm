@@ -1,6 +1,6 @@
 from django.db.models import Count
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render ,redirect
 from django.views import View
 from app.models import Product ,Customer
 from app.forms import CustomerRegistrationForm ,CustomerProfileForm
@@ -73,3 +73,30 @@ class ProfileView(View):
 def address(request):
     add = Customer.objects.filter(user=request.user)
     return render(request , 'app/address.html',locals())
+
+class updateAddress(View):
+    def get(self,request,pk):
+        add = Customer.objects.get(pk=pk)
+        form = CustomerProfileForm(instance=add)
+        return render(request , 'app/updateAddress.html',locals())
+    def post(self,request,pk):
+        form = CustomerProfileForm(request.POST)
+        if form.is_valid():
+            add = Customer.objects.get(pk=pk)
+            add.name = form.cleaned_data['name']
+            add.locality = form.cleaned_data['locality']
+            add.city = form.cleaned_data['city']
+            add.mobile = form.cleaned_data['mobile']
+            add.state = form.cleaned_data['state']
+            add.zipcode = form.cleaned_data['zipcode']
+            add.save()
+            messages.success(request , "congratulations! profile Update successfully")
+        else:
+            messages.warning(request , "invalid input data")
+        return redirect("address")
+    
+class PasswordChangeView(View):
+    pass
+
+class PasswordChangeDoneView(View):
+    pass

@@ -14,7 +14,7 @@
                         {{fmg.label_tag}} {{fmg}} <small class="text-danger">{{fmg.errors|striptags}}</small><br>
                         <br>
                     {% endfor %}      
-                    <small><a href="{% url 'password_reset' %}">Forgot Password</a></small><br>
+                    <small><a href="{% url 'password_reset' %}">Forgot Password ?</a></small><br>
                     <input type="submit" class="btn btn-primary mt-4" value="Login">
                     <div class="text-center text-primary fw-bold">
                         <small>New User? <a href="{% url 'customerregistration' %}" class="text-danger"> Create an Account</a></small>

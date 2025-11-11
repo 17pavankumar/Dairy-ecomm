@@ -37,7 +37,7 @@ class CustomerRegistrationView(View):
     def get(self,request):
         form = CustomerRegistrationForm()
         return render(request , 'app/customerregistration.html',locals())
-    def get(self,request):
+    def post(self,request):
         form = CustomerRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
@@ -94,9 +94,8 @@ class updateAddress(View):
         else:
             messages.warning(request , "invalid input data")
         return redirect("address")
-    
-class PasswordChangeView(View):
+ 
+ 
+def add_to_cart(request):
     pass
 
-class PasswordChangeDoneView(View):
-    pass

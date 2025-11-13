@@ -34,6 +34,8 @@ urlpatterns = [
     
     #checkout section
     path('checkout/', views.checkout.as_view(), name = 'checkout'),
+    path('paymentdone/', views.payment_done, name = 'paymentdone'),
+    # path('orders/', views.home, name = 'orders'),
     
     # login authentication
     path('registration/', views.CustomerRegistrationView.as_view() , name='customerregistration'),

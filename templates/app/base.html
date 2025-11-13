@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="{% static 'app/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
   </head>
   <body>
@@ -170,11 +171,11 @@
             <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
             <li><a class="dropdown-item" href="#">Orders</a></li>
             <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
-            <li><a class="dropdown-item" href="{% url 'logout_page' %}">Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logout_page' %}" >Logout</a></li>
           </ul>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link text-white" href="#">Cart 4</a>
+          <a class="nav-link text-white" href="{% url 'showcart' %}">Cart 4</a>
         </li>
         <li class="nav-item mx-2">
           <a class="nav-link text-white" href="#">Wishlist 4</a>
@@ -195,6 +196,8 @@
 {% block banner-slider %}  {% endblock banner-slider %}
 {% block information %}  {% endblock information %}
 {% block main-content %} {% endblock main-content %}
+{% block payment-gateway %}{% endblock payment-gateway %}
+
 
 <footer class="container-fluid fixed-bottom bg-success text-center p-2 mt-5">
   developed by pavan
